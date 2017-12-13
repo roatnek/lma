@@ -1,0 +1,26 @@
+{
+  "name": "lma-boilerplate",
+  "description": "LMA Boilerplate",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^7.1.6",
+    "eslint": "^4.10.0",
+    "http-server": "^0.10.0",
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "postcss-custom-properties": "^6.2.0",
+    "postcss-import": "^11.0.0",
+    "postcss-nested": "^2.1.2",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0"
+  },
+  "scripts": {
+    "start": "npm run serve & npm run dev",
+    "serve": "http-server ./public/ -o",
+    "dev": "npm run build:css",
+    "build:css": "postcss -w ./src/styles/styles.css -o ./public/assets/styles/styles.css",
+    "test": "npm run test:css && npm run test:js",
+    "test:css": "stylelint 'src/styles/**/*.css'; exit 0",
+    "test:js": "eslint 'src/scripts/**/*.js'; exit 0"
+  }
+}
