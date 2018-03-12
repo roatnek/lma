@@ -4,12 +4,12 @@
   --ff-sans-serif-hdg: "Noto Sans JP", sans-serif;
 
   /* font size */
-  --fz-s: 14px;
-  --fz-m: 18px;
-  --fz-l: 20px;
-  --fz-2l: 23px;
-  --fz-3l: 26px;
-  --fz-4l: 32px;
+  --fz-s: 0.777rem;   /* 14px */
+  --fz-m: 1rem;       /* 18px */
+  --fz-l: 1.111rem;   /* 20px */
+  --fz-2l: 1.2777rem; /* 23px */
+  --fz-3l: 1.444rem;  /* 26px */
+  --fz-4l: 1.777rem;  /* 32px */
 
   /* heading font size */
   --fz-hdg-lev2: var(--fz-3l);
