@@ -15,12 +15,12 @@
     "stylelint-config-standard": "^17.0.0"
   },
   "scripts": {
-    "start": "npm run serve & npm run dev",
+    "start": "npm run serve && npm run dev",
     "serve": "http-server ./docs/ -o",
-    "dev": "npm run build:css",
-    "build:css": "postcss -w ./src/styles/styles.css -o ./docs/assets/styles/styles.css",
-    "test": "npm run test:css && npm run test:js",
-    "test:css": "stylelint 'src/styles/**/*.css'; exit 0",
-    "test:js": "eslint 'src/scripts/**/*.js'; exit 0"
+    "dev": "npm run watch-build-css",
+    "watch-build-css": "postcss -w ./src/styles/styles.css -o ./docs/assets/styles/styles.css",
+    "test": "npm run test-css && npm run test-js",
+    "test-css": "stylelint 'src/styles/**/*.css'; exit 0",
+    "test-js": "eslint 'src/scripts/**/*.js'; exit 0"
   }
 }
