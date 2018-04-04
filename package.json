@@ -1,6 +1,6 @@
 {
-  "name": "lma-boilerplate",
-  "description": "LMA Boilerplate",
+  "name": "lma",
+  "description": "LMA website",
   "private": true,
   "dependencies": {
     "autoprefixer": "^7.1.6",
@@ -19,12 +19,12 @@
   "scripts": {
     "start": "npm run serve && npm run dev",
     "serve": "http-server ./docs/ -o",
-    "dev": "npm run watch-build-css",
-    "build-css": "node-sass --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
-    "watch-build-css": "node-sass -w --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
+    "dev": "npm run watch-build:css",
+    "build:css": "node-sass --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
+    "watch-build:css": "node-sass -w --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
     "add-css-prefix": "postcss ./docs/assets/styles/styles.css -d ./docs/assets/styles/",
-    "test": "npm run test-css && npm run test-js",
-    "test-css": "stylelint './docs/assets/styles/**/*.css'; exit 0",
-    "test-js": "eslint './src/scripts/**/*.js'; exit 0"
+    "test": "npm run test:css && npm run test:js",
+    "test:css": "stylelint './docs/assets/styles/**/*.css'; exit 0",
+    "test:js": "eslint './src/scripts/**/*.js'; exit 0"
   }
 }
