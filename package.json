@@ -9,9 +9,6 @@
     "node-sass": "^4.8.3",
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0",
-    "postcss-nested": "^2.1.2",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0"
   },
@@ -19,9 +16,11 @@
     "start": "npm run serve && npm run dev",
     "serve": "http-server ./docs/ -o",
     "dev": "npm run watch-build-css",
-    "watch-build-css": "postcss -w ./src/styles/styles.css -o ./docs/assets/styles/styles.css",
+    "build-css": "node-sass --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
+    "watch-build-css": "node-sass -w --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
+    "add-css-prefix": "postcss --config postcss.config.js ./docs/assets/styles/styles.css -d ./docs/assets/styles/",
     "test": "npm run test-css && npm run test-js",
-    "test-css": "stylelint 'src/styles/**/*.css'; exit 0",
-    "test-js": "eslint 'src/scripts/**/*.js'; exit 0"
+    "test-css": "stylelint './docs/assets/styles/**/*.css'; exit 0",
+    "test-js": "eslint './src/scripts/**/*.js'; exit 0"
   }
 }
