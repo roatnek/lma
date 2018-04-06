@@ -25,7 +25,7 @@
     "watch:css": "watch 'npm run build:css' ./src/styles/",
     "build:css": "npm run compile-sass && npm run add-css-prefix",
     "compile-sass": "node-sass --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
-    "add-css-prefix": "postcss ./docs/assets/styles/styles.css -d ./docs/assets/styles/",
+    "add-css-prefix": "postcss ./docs/assets/styles/styles.css -d ./docs/assets/styles/ --no-map",
     "test": "npm run test:css & npm run test:js",
     "test:css": "stylelint './docs/assets/styles/**/*.css'; exit 0",
     "test:js": "eslint './src/scripts/**/*.js'; exit 0"
