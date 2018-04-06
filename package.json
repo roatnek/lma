@@ -10,20 +10,23 @@
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
     "stylelint": "^8.2.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint-config-standard": "^17.0.0",
+    "watch": "^1.0.2"
   },
   "browserslist": [
     "last 2 versions",
     "ie 11"
   ],
   "scripts": {
-    "start": "npm run serve && npm run dev",
+    "start": "npm run serve & npm run dev",
     "serve": "http-server ./docs/ -o",
-    "dev": "npm run watch-build:css",
-    "build:css": "node-sass --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
-    "watch-build:css": "node-sass -w --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
+    "dev": "npm run watch",
+    "watch": "npm run watch:css",
+    "watch:css": "watch 'npm run build:css' ./src/styles/",
+    "build:css": "npm run compile-sass && npm run add-css-prefix",
+    "compile-sass": "node-sass --include-path scss ./src/styles/styles.scss ./docs/assets/styles/styles.css --output-style expanded",
     "add-css-prefix": "postcss ./docs/assets/styles/styles.css -d ./docs/assets/styles/",
-    "test": "npm run test:css && npm run test:js",
+    "test": "npm run test:css & npm run test:js",
     "test:css": "stylelint './docs/assets/styles/**/*.css'; exit 0",
     "test:js": "eslint './src/scripts/**/*.js'; exit 0"
   }
