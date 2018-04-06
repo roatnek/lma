@@ -36,7 +36,8 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -54,7 +55,8 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b,
@@ -169,7 +171,8 @@ fieldset {
 }
 
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -188,7 +191,8 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -300,7 +304,8 @@ section section section section {
 h1, h2, h3, h4, h5, h6 {
   color: #111;
   font-family: var(--ff-sans-serif-hdg);
-  font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
   letter-spacing: 0.02em;
 }
 
@@ -418,5 +423,6 @@ ul > li::before {
 .dash {
   margin: 0 0.5em;
   display: inline-block;
-  transform: scale(2, 1);
+  -webkit-transform: scale(2, 1);
+          transform: scale(2, 1);
 }
