@@ -2,11 +2,11 @@ html {
   color: #222;
   background-color: #f7f7f7;
   line-height: 1.8;
-  font-size: 18px;
+  font-size: 112.5%; // 18px
   font-family: var(--ff-sans-serif-base);
 
   @media screen and (max-width: 760px) {
-    font-size: 14px;
+    font-size: 87.5%; // 14px
   }
 }
 
